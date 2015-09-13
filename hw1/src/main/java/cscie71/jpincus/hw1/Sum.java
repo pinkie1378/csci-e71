@@ -9,9 +9,8 @@ public class Sum
     public static void main( String[] args )
     {
         if (args.length != 2) {
-        	//System.err.println("Usage: input 2 integers");
-        	//return;
-        	throw new NumberFormatException();
+        	usage();
+        	return;
         }
         try {
         	int num1 = Integer.valueOf(args[0]);
@@ -20,7 +19,10 @@ public class Sum
         	System.out.println(calc.sum());
         }
         catch (NumberFormatException e) {
-        	System.err.println("Usage: input 2 integers");
+        	usage();
         }
+    }
+    public static void usage() {
+    	System.err.println("Usage: input 2 integers");
     }
 }
